@@ -19,13 +19,13 @@ class Process {
   /**
    * @brief Constructs a new Process object.
    *
-   * @param spawn The time aftert which the process is respawned.
-   * @param dead The time in which the process must be completed. If deadlline
+   * @param spawn_time The time aftert which the process is respawned.
+   * @param deadline The time in which the process must be completed. If deadlline
    * will be missed by taking the execution time into account, the process will
    * be discraded.
-   * @param exec The execution time it taked for the process to finish.
+   * @param execution_time The execution time it takes for the process to finish.
    */
-  Process(int spawn, int dead, int exec);
+  Process(int spawn_time, int deadline, int execution_time);
   /**
    * @brief Gets the spawn time of the process.
    *
