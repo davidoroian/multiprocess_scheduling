@@ -1,14 +1,19 @@
+#include <chrono>
 #include <iostream>
+#include <thread>
+#include <vector>
 
 #include "Process.h"
+#include "System.h"
 
 int main() {
-
-  Process p(10, 20, 30);
-
-  std::cout << "Spawn Time: " << p.getSpawnTime() << std::endl;
-  std::cout << "Deadline: " << p.getDeadline() << std::endl;
-  std::cout << "Execution Time: " << p.getExecutionTime() << std::endl;
+  std::vector<Process> process_types = {
+      Process("Process 1", 1, 10, 2),
+      Process("Process 2", 2, 10, 3),
+      Process("Process 3", 3, 10, 4),
+  };
+  System system(process_types);
+  system.run(10);
 
   return 0;
 }

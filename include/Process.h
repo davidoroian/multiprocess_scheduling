@@ -1,16 +1,27 @@
 
 #ifndef PROCESS_H
 #define PROCESS_H
+
+#include <string>
+
 /**
  * @class Process
- * @brief Represents a process with spawn time, deadline, and execution time.
+ * @brief Represents a process with name, spawn time, deadline, and execution
+ * time.
+ * @param name The name of the process.
+ * @param spawn_time The time after which the process is respawned.
+ * @param deadline The time in which the process must be completed. If deadlline
+ * will be missed by taking the execution time into account, the process will be
+ * discraded.
+ * @param execution_time The execution time it takes for the process to finish.
  *
  * The Process class encapsulates the attributes of a process including its
- * spawn time, deadline, and execution time. It provides methods to access
+ * name, spawn time, deadline, and execution time. It provides methods to access
  * these attributes.
  */
 class Process {
  private:
+  std::string name;
   int spawn_time;
   int deadline;
   int execution_time;
@@ -19,13 +30,22 @@ class Process {
   /**
    * @brief Constructs a new Process object.
    *
-   * @param spawn_time The time aftert which the process is respawned.
-   * @param deadline The time in which the process must be completed. If deadlline
-   * will be missed by taking the execution time into account, the process will
-   * be discraded.
-   * @param execution_time The execution time it takes for the process to finish.
+   * @param name The name of the process.
+   * @param spawn_time The time after which the process is respawned.
+   * @param deadline The time in which the process must be completed. If
+   * deadlline will be missed by taking the execution time into account, the
+   * process will be discraded.
+   * @param execution_time The execution time it takes for the process to
+   * finish.
    */
-  Process(int spawn_time, int deadline, int execution_time);
+  Process(const std::string& name, int spawn_time, int deadline,
+          int execution_time);
+  /**
+   * @brief Gets the name of the process.
+   *
+   * @return The name of the process.
+   */
+  std::string getName() const;
   /**
    * @brief Gets the spawn time of the process.
    *
