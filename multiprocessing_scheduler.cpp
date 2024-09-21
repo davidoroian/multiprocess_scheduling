@@ -1,18 +1,13 @@
-#include <chrono>
-#include <iostream>
-#include <thread>
-#include <vector>
-
-#include "Process.h"
-#include "System.h"
+#include "MyProcess.h"
+#include "MySystem.h"
 
 int main() {
-  std::vector<Process> process_types = {
-      Process("Process 1", 1, 10, 2),
-      Process("Process 2", 2, 10, 3),
-      Process("Process 3", 3, 10, 4),
+  std::vector<MyProcess> process_types = {
+      MyProcess("Process 1", 1, 10, 2),
+      MyProcess("Process 2", 2, 10, 3),
+      MyProcess("Process 3", 3, 10, 4),
   };
-  System system(process_types);
+  MySystem system(process_types);
   system.run(10);
 
   return 0;

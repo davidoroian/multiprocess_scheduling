@@ -1,11 +1,11 @@
 
-#ifndef PROCESS_H
-#define PROCESS_H
+#ifndef MYPROCESS_H
+#define MYPROCESS_H
 
 #include <string>
 
 /**
- * @class Process
+ * @class MyProcess
  * @brief Represents a process with name, spawn time, deadline, and execution
  * time.
  * @param name The name of the process.
@@ -19,7 +19,7 @@
  * name, spawn time, deadline, and execution time. It provides methods to access
  * these attributes.
  */
-class Process {
+class MyProcess {
  private:
   std::string name;
   int spawn_time;
@@ -28,7 +28,7 @@ class Process {
 
  public:
   /**
-   * @brief Constructs a new Process object.
+   * @brief Constructs a new MyProcess object.
    *
    * @param name The name of the process.
    * @param spawn_time The time after which the process is respawned.
@@ -38,7 +38,7 @@ class Process {
    * @param execution_time The execution time it takes for the process to
    * finish.
    */
-  Process(const std::string& name, int spawn_time, int deadline,
+  MyProcess(const std::string& name, int spawn_time, int deadline,
           int execution_time);
   /**
    * @brief Gets the name of the process.
@@ -66,4 +66,4 @@ class Process {
   int getExecutionTime() const;
 };
 
-#endif  // PROCESS_H
+#endif  // MYPROCESS_H
