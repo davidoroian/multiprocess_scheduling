@@ -1,14 +1,13 @@
-#include "MyProcess.h"
 #include "MySystem.h"
 
 int main() {
   std::vector<MyProcess> process_types = {
-      MyProcess("Process 1", 1, 10, 2),
-      MyProcess("Process 2", 2, 10, 3),
-      MyProcess("Process 3", 3, 10, 4),
+      MyProcess("A", 30, 10, 7),
+      MyProcess("B", 10, 7, 4),
+      MyProcess("C", 5, 2, 1),
   };
   MySystem system(process_types);
-  system.run(10);
+  system.run(30);
 
   return 0;
 }
